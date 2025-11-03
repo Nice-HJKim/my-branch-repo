@@ -6,15 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "현재 브랜치: ${{ github.ref_name }}"
+          echo "현재 브랜치: ${{ github.ref }}"
 
       - name: Dev Branch Only
-        if: ${{ github.ref_name == 'dev' }}
+        if: ${{ github.ref == 'dev' }}
         run: |
           echo "개발 브랜치이므로 테스트 실행!"
 
       - name: Main Branch Only
-        if: ${{ github.ref_name == 'main' }}
+        if: ${{ github.ref == 'main' }}
         run: |
           echo "운영 브랜치이므로 배포 진행!"
 
